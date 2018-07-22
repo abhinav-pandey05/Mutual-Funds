@@ -1,0 +1,98 @@
+<div class="data-container"></div>
+{{#with Quarterly.Funds}}
+        {{#each this}}
+          <div class= "dataRowContainer {{{AssetClasses}}} {{{AdditionalAttributes}}}" id ="{{Id}}">
+            <div class=" portfolioData">  
+                <div class="cell portfolioName" >
+                    <a href={{Documents.Prospectus.Url}} target="blank">{{Documents.portfolio-name}}</a>
+                </div>
+                <div class="cell ticker">{{PortfolioData.identifier}}</div>
+                <div class="cell inceptionDate">
+                    {{PortfolioData.inception-date}}
+                </div>
+                <div class="cell navi">{{PortfolioData.nav-price}}</div>
+                  <div class="cell ytd">{{PortfolioData.ytd}}</div>
+                  <div class="cell oneYear">{{PortfolioData.one-year}}</div>
+                  <div class="cell threeYear">{{PortfolioData.three-year}}</div>
+                  <div class="cell fiveYear">{{PortfolioData.five-year}}</div>
+                  <div class="cell tenYear">{{PortfolioData.ten-year}}</div>
+                  <div class="cell sinceInception">
+                      {{PortfolioData.since-inception}}
+                  </div>
+                  <div class="cell gross">{{PortfolioData.TOER}}</div>
+                  <div class="cell net">{{PortfolioData.NER}}</div>
+            </div>
+            <div class=" benchmarkData">  
+                <div class="cell portfolioName" >
+                    {{BenchmarkData.0.portfolio-name}}
+                </div>
+                {{#if BenchmarkData.0.identifier}}
+                <div class="cell ticker">{{this.BenchmarkData.0.identifier}}</div>
+                {{else}}
+                <div class="cell ticker">—</div>
+                {{/if}}
+
+                {{#if BenchmarkData.0.inception-date}}
+                <div class="cell inceptionDate">{{BenchmarkData.0.inception-date}}</div>
+                {{else}}
+                <div class="cell inceptionDate">—</div>
+                {{/if}}
+
+                {{#if BenchmarkData.0.nav-price}}
+                <div class="cell navi">{{BenchmarkData.0.nav-price}}</div>
+                {{else}}
+                <div class="cell navi">—</div>
+                {{/if}}
+                
+                {{#if BenchmarkData.0.ytd}}
+                <div class="cell ytd">{{BenchmarkData.0.ytd}}</div>
+                {{else}}
+                <div class="cell ytd">—</div>
+                {{/if}}
+                
+                {{#if BenchmarkData.0.one-year}}
+                <div class="cell oneYear">{{BenchmarkData.0.one-year}}</div>
+                {{else}}
+                <div class="cell oneYear">--</div>
+                {{/if}}
+                
+                {{#if BenchmarkData.0.three-year}}
+                <div class="cell threeYear">{{BenchmarkData.0.three-year}}</div>
+                {{else}}
+                <div class="cell threeYear">—</div>
+                {{/if}}
+                
+                {{#if BenchmarkData.0.five-year}}
+                <div class="cell fiveYear">{{BenchmarkData.0.five-year}}</div>
+                {{else}}
+                <div class="cell fiveYear">—</div>
+                {{/if}}
+
+                {{#if BenchmarkData.0.ten-year}}
+                <div class="cell tenYear">{{BenchmarkData.0.ten-year}}</div>
+                {{else}}
+                <div class="cell tenYear">—</div>
+                {{/if}}
+                
+                {{#if BenchmarkData.0.since-inception}}
+                <div class="cell sinceInception">{{BenchmarkData.0.since-inception}}</div>
+                {{else}}
+                <div class="cell sinceInception">—</div>
+                {{/if}}
+                  
+                {{#if BenchmarkData.0.TOER}}
+                <div class="cell gross">{{BenchmarkData.0.TOER}}</div>
+                {{else}}
+                <div class="cell gross">—</div>
+                {{/if}}
+                  
+                {{#if BenchmarkData.0.NER}}
+                <div class="cell net">{{BenchmarkData.0.NER}}</div>
+                {{else}}
+                <div class="cell net">—</div>
+                {{/if}}
+            </div>
+          </div>    
+      {{/each}}
+      {{/with}}
+      </div>

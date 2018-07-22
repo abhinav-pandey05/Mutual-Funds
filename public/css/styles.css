@@ -1,0 +1,417 @@
+#preHeadingTemplate ,#dataRowTemplate
+{
+    display: block;
+}
+.container-fluid
+{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+*
+{
+    box-sizing: border-box;
+}
+.cell
+{
+    width: 7%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+h1.headLine
+{
+    font-family: "Sentinel A","Sentinel B";
+    font-size: 3.75rem;
+    font-weight: 400;
+    color: #363d43;
+    padding-left: 25px;
+}
+.refresh
+{
+    padding-left: 25px;
+}
+.buttonsContainer button:active ,.buttonsContainer1 button:active
+{
+    background-color: yellow;
+    color: black;
+}
+.searchBar , .filter
+{
+    background-color: rgb(91, 103, 111);
+}
+.imgSearchBox
+{
+    position: absolute;
+    right: 35px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+}
+.sortIcons img
+{
+    width: 16px;
+    height: 16px;
+}
+.sortIcons img:first-child 
+{
+    padding-bottom: zero;
+    padding-top: zero;
+}
+
+.searchInput , .dropDownContainer
+{
+    border-right: none;
+    width: 295px;
+    margin-right: 25px;
+}
+.dropDownContainer{
+    margin-top: none;
+    background: white;
+    margin-top: -10px;
+    max-height: 180px;
+    overflow: hidden;
+}
+.dropDownContainer a{
+    display: block;
+    border-bottom: grey 1px solid;
+    font-size: .8rem;
+    padding: 5px;
+}
+.searchBoxLabel
+{
+    position: relative;
+}
+.searchBar
+{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom:  10px;
+}
+#searchBox
+{
+    
+    border: aquamarine 1px solid;
+    font-size: .8rem;
+    padding: 5px;
+}
+.buttonsContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+/* .buttonsContainer1
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+} */
+
+.assetClassFilters , .additionalFilters
+{
+    display: flex;
+    flex-direction : column;
+    align-items: flex-start;
+}
+.filterHeader
+{
+    
+    font-size: 0.8rem;
+    color: whitesmoke;
+    font-family: "Avenir LT Black";
+}
+.assetClassFilters .filterHeader
+{
+    margin-left: 12px;
+}
+.buttonsContainer button
+{
+    height: 52px;
+    color: #e4e4e3;
+    background-color: rgb(91, 103, 111);
+    font-family: "Avenir LT Black";
+    width: 30%;
+    border: 1px solid #7d7d7a;
+    font-size: .9rem;
+    margin-top: 8px;
+}
+.buttonsContainer button:hover{
+    background-color: #e4e4e3;
+    color: #363d43;
+    border: 1px solid transparent;
+    font-family: "Avenir LT Black";
+    font-weight: bold;
+}
+.buttonsContainer1 button
+{
+    height: 52px;
+    color: #e4e4e3;
+    background-color: rgb(91, 103, 111);
+    font-family: "Avenir LT Book";
+    border: 1px solid #7d7d7a;
+    font-size: .9rem;
+    margin-top: 8px;
+    width: 30%;
+    margin-right: 10px;
+}
+.filter
+{
+    padding-bottom: 40px;
+}
+.preHeadings ,.fundsTable 
+{
+    background-color: rgb(202, 202, 200);
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 25px;
+}
+.dataRowContainer
+{
+    border-bottom: #91918d 1px solid;
+}
+.portfolioData ,.benchmarkData
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 25px;
+}
+.portfolioData :first-child , .benchmarkData :first-child
+{
+    /* width: 22%; */
+    text-align: left;
+    font-size: 0.8rem;
+}
+.portfolioData:hover , .benchmarkData:hover
+{
+    background: #efedea;
+}
+.portfolioData .cell , .benchmarkData .cell
+{
+    font-size: 0.8rem;
+}
+.headingText
+{
+    font-size: 1.13rem;
+    line-height: 2rem;
+    width: 60%;
+    padding-left:25px;
+} 
+.description
+{
+    margin-left: 17px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    font-family: "Avenir LT Book";
+    color: #363d43;
+}
+.benchmarkButton
+{
+     padding: 8px 30px;
+    font-size: .9rem;
+    background: #9a9a9a;
+    color: #e4e4e3;
+    border: none;
+}
+.portfolioName ,.benchmark
+{
+    width: 22%;
+    text-align: left;
+} 
+.portfolioName
+{
+    display: flex;
+    flex-direction: row;
+    text-align: end;
+}
+.sortIcons
+{
+    display: flex;
+    flex-direction: column;
+}
+.monthlyQuarterly
+{
+    padding-top: 16px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+}
+.buttonGroup
+{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+.buttonGroup input
+{
+    width: 90px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    font-size: .8rem;
+    background: #9a9a9a;
+    color: #e4e4e3;
+    border: none;
+}
+/* .buttonGroup input:active
+{
+    background-color: red;
+} */
+.buttonGroup input:hover
+{
+    background-color: blue;
+}
+.monthlyQuarterly
+{
+    /* border-right: 1px solid black; */
+    width: 42%;
+}
+.ratio
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 14%;
+}
+.sinceInception , .inceptionDate ,.ticker ,.dateHeader ,.navi,.empty
+{
+    text-align: center;
+}  
+.tabDescription ,.dateHeader , .expenseRatio 
+{
+    font-size: 0.75rem;
+    line-height: .8rem;
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 700;
+}
+.expenseRatio 
+{
+    text-align: center;
+    width: 14%;
+    padding-top: 25px; 
+}
+.fundsTable 
+{
+    font-size: .75rem;
+    line-height: .8rem;
+    font-family: 'Palanquin', sans-serif;
+    font-weight: bold;
+    color: 363d43;
+}
+.dateHeader ,.navi 
+{
+    border-left: #5b676f 1px solid;
+    border-right:#5b676f 1px solid;
+}
+.monthlyQuarterly ,.sinceInception 
+{
+    border-right: #91918d 1px solid;
+}
+.sortable , .sortable label 
+{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.sortable:hover ,.sortable label:hover 
+{
+    color: darkred;
+    font-size: 1.1em;
+}
+.cell a 
+{
+    color: #00919c !important;
+    text-decoration: none;
+    font-family: "Avenir LT Black";
+    font-size: .8rem;
+    font-weight: bold;
+}
+.filterActive 
+{
+    background-color: yellowgreen;
+}
+.actionContainer 
+{
+    overflow: hidden;
+    
+}
+.stickyClass 
+{
+    position: fixed;
+    top: 0;
+    width: -webkit-fill-available;
+    transition: all 0.3s ease ;
+}
+.hideFilter , .refresh 
+{
+    cursor: pointer;
+    color: white;
+}
+.searchTable 
+{
+    position: relative;   
+}
+.dropdownContent 
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: block;
+}
+.filterActive
+{
+    background-color: yellowgreen;
+}
+.templateActive
+{
+    background-color: green;
+    color: black;
+}
+
+.data-container .dataRowContainer .cell:hover:not(:first-child) 
+{
+    background: #d8d6d2;
+}
+.data-container .cell:not(:first-child)
+{
+    position: relative;
+}
+.data-container
+{
+    overflow: hidden;
+
+}
+.data-container .cell:hover:not(:first-child)::after
+{
+
+    content: "";
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: -5000px;
+    height: 10000px;
+    z-index: -1;
+    background-color: #efedea;
+}
+.headerContainer
+{
+    z-index: 10;
+}
+button[data-activebutton="buttonActive"]
+{
+    background-color:yellow;
+    color:black;
+}
+button[data-activebutton="buttonInactive"]
+{
+    background-color:rgb(91, 103, 111);
+    color:white;
+}

@@ -1,0 +1,122 @@
+{
+   "data":{
+      "AssetClassFilters":{
+         "label":"ASSET CLASS",
+         "placeholder":null,
+         "AvailableFilters":[
+            {
+               "EntityId":0,
+               "Value":{
+                  "Value":"Equity",
+                  "CmsId":"Equity",
+                  "IsCms":false,
+                  "FootnoteSymbol":null
+               },
+               "selected":false
+            },
+            {
+               "EntityId":0,
+               "Value":{
+                  "Value":"Fixed Income",
+                  "CmsId":"Fixed Income",
+                  "IsCms":false,
+                  "FootnoteSymbol":null
+               },
+               "selected":false
+            },
+            {
+               "EntityId":0,
+               "Value":{
+                  "Value":"Real Estate",
+                  "CmsId":"Real Estate",
+                  "IsCms":false,
+                  "FootnoteSymbol":null
+               },
+               "selected":false
+            },
+            {
+               "EntityId":0,
+               "Value":{
+                  "Value":"Global Allocation",
+                  "CmsId":"Global Allocation",
+                  "IsCms":false,
+                  "FootnoteSymbol":null
+               },
+               "selected":false
+            },
+            {
+               "EntityId":0,
+               "Value":{
+                  "Value":"Commodities",
+                  "CmsId":"Commodities",
+                  "IsCms":false,
+                  "FootnoteSymbol":null
+               },
+               "selected":false
+            },
+            {
+               "EntityId":0,
+               "Value":{
+                  "Value":"Target Date",
+                  "CmsId":"Target Date",
+                  "IsCms":false,
+                  "FootnoteSymbol":null
+               },
+               "selected":false
+            }
+         ],
+         "ComponentName":"asset-class-filters",
+         "ErrorMessages":null,
+         "HasError":false,
+         "FootnoteSymbol":null
+      },
+      "RegionFilters":null,
+      "AdditionalFilters":{
+         "label":"ADDITIONAL FILTERS",
+         "placeholder":null,
+         "AvailableFilters":[
+            {
+               "EntityId":0,
+               "Value":{
+                  "Value":"Socially Responsible",
+                  "CmsId":"Social",
+                  "IsCms":false,
+                  "FootnoteSymbol":null
+               },
+               "selected":false
+            },
+            {
+               "EntityId":0,
+               "Value":{
+                  "Value":"Sustainability",
+                  "CmsId":"Sustainability",
+                  "IsCms":false,
+                  "FootnoteSymbol":null
+               },
+               "selected":false
+            }
+         ],
+         "ComponentName":"additional-filters",
+         "ErrorMessages":null,
+         "HasError":false,
+         "FootnoteSymbol":null
+      },
+      "ShareClassFilters":null,
+      "CurrencyFilters":null,
+      "ClearAllLabel":"Clear All",
+      "SearchText":"Search",
+      "AssetClassFilterLabel":null,
+      "RegionFilterLabel":null,
+      "AdditionalFilterLabel":null,
+      "CurrencyFilterLabel":null,
+      "ShareClassFilterLabel":null,
+      "hideFilters":"Hide Filters",
+      "showFilters":"Show Filters",
+      "CloseText":"Close",
+      "ApplyFiltersText":"Apply Filters",
+      "SectionTitle":"Filters",
+      "BreadcrumbTextSingle":"filter selected",
+      "BreadcrumbTextMultiple":"filters selected",
+      "PageTitle":"Mutual Funds"
+   }
+}

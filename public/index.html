@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mutual Funds Stuff</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.0/handlebars.js"></script>
+  <script src="precompiledHandlebars/tableDataRows.js"></script>
+  <script src="precompiledHandlebars/quarterlyData.js"></script>
+  <script src="precompiledHandlebars/preHeadingTemplate.js"></script>
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> 
+</head>
+<body>
+  <div>
+    <section class="description">
+      <h1 class="headLine">Mutual Funds</h1>
+      <p class="headingText"> 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      </p>
+    </section>  
+    <section class="actionContainer">
+      <div class="  searchBar">
+        <div class="col-xs-4 refresh" >
+          <span>Clear All</span>
+          <img src="assets/refresh.png" alt="refresh icon">
+        </div>
+        <div class="col-xs-4 hideFilter" >
+          <span>HIDE FILTERS</span>
+        </div>
+        <div class="col-xs-4 searchTable" >
+          <label class="searchBoxLabel" for ="searchBox">
+            <input type="text" id="searchBox" class="searchInput" value="" placeholder="Search" autocomplete="off">
+              <img src="assets/searchIcon.jpg" class="imgSearchBox" />
+          </label>
+          <div class="dropDownContainer">
+          </div>
+        </div>
+      </div>
+      <div class=" filter">
+        <div class="col-lg-4 assetClassFilters">
+          <h4 class="filterHeader">Asset Class Filters</h4>
+          <div class=" buttonsContainer">
+            <button class="Fixed Income">Fixed Income</button>
+            <button class="Equity">Equity</button>
+            <button class="Real Estate">Real Estate</button>
+            <button class="Global Allocation">Global Allocation</button>
+            <button class="Commodities">Commodities</button>
+            <button class="Target Date">Target Date</button>
+          </div>
+        </div>
+      </div>
+      <div class="headerContainer" >
+        <script id = "preHeadingTemplate" type="text/x-handlebars-template">
+        </script>
+        <div class=" fundsTable">
+          <div class="cell portfolioName sort-key sorted-asc sortable" data-column-number = "0" >PORTFOLIO NAME
+          </div>
+          <div class="cell ticker sort-key sorted-asc sortable" data-column-number = "1">TICKER</div>
+          <div class="cell inceptionDate sort-key sorted-asc sortable" data-column-number = "2">
+            <label>INCEPTION</label><br>
+            <label>DATE</label>
+          </div>
+          <div class="cell navi">NAV</div>
+          <div class="cell ytd">YTD</div>
+          <div class="cell oneYear">1 YEAR</div>
+          <div class="cell threeYear">3 YEAR</div>
+          <div class="cell fiveYear">5 YEAR</div>
+          <div class="cell tenYear">10 YEAR</div>
+          <div class="cell sinceInception">
+            <label>SINCE</label><br>
+            <label>INCEPTION</label>
+          </div>
+          <div class="cell gross">GROSS</div>
+          <div class="cell net">NET</div>
+        </div>  
+      </div>
+    </section>
+    <script id="dataRowTemplate" type="text/x-handlebars-template">
+    </script>
+    <p class="headingText"> 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
+    <p class="headingText"> 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
+    <p class="headingText"> 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
+  </div>
+</body>
+<script src="js/mutualFunds.js"></script>
+<link rel="stylesheet" href="css/styles.css" type="text/css">
+</html>
