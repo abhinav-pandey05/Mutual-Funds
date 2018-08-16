@@ -27,4 +27,4 @@ Have a look at various mutual funds portfolios that this application has to offe
 4. Switch to the **src** folder :
   > cd src
 5. Hit following command on the command prompt : 
-  > npm start
+  > ws
