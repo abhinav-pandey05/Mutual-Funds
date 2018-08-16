@@ -1,3 +1,7 @@
+*
+{
+    box-sizing: border-box;
+}
 #preHeadingTemplate ,#dataRowTemplate
 {
     display: block;
@@ -7,16 +11,13 @@
     padding-right: 0px;
     padding-left: 0px;
 }
-*
-{
-    box-sizing: border-box;
-}
 .cell
 {
     width: 7%;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 10px;
+    font-family: 'Palanquin', sans-serif;
 }
 h1.headLine
 {
@@ -43,7 +44,7 @@ h1.headLine
 {
     position: absolute;
     right: 35px;
-    top: 6px;
+    top: 0px;
     width: 16px;
     height: 16px;
 }
@@ -61,13 +62,13 @@ h1.headLine
 .searchInput , .dropDownContainer
 {
     border-right: none;
-    width: 295px;
+    width: 320px;
     margin-right: 25px;
 }
 .dropDownContainer{
     margin-top: none;
     background: white;
-    margin-top: -10px;
+    /* margin-top: -10px; */
     max-height: 180px;
     overflow: hidden;
 }
@@ -76,6 +77,9 @@ h1.headLine
     border-bottom: grey 1px solid;
     font-size: .8rem;
     padding: 5px;
+    font-family: 'Palanquin', sans-serif;
+    color: green;
+    text-decoration: none;
 }
 .searchBoxLabel
 {
@@ -115,14 +119,14 @@ h1.headLine
 {
     display: flex;
     flex-direction : column;
-    align-items: flex-start;
+    align-items: flex-start; 
 }
 .filterHeader
 {
     
     font-size: 0.8rem;
     color: whitesmoke;
-    font-family: "Avenir LT Black";
+    font-family: 'Palanquin', sans-serif;
 }
 .assetClassFilters .filterHeader
 {
@@ -133,7 +137,7 @@ h1.headLine
     height: 52px;
     color: #e4e4e3;
     background-color: rgb(91, 103, 111);
-    font-family: "Avenir LT Black";
+    font-family: 'Palanquin', sans-serif;
     width: 30%;
     border: 1px solid #7d7d7a;
     font-size: .9rem;
@@ -236,11 +240,13 @@ h1.headLine
 }
 .monthlyQuarterly
 {
+    width: 42%;
     padding-top: 16px;
-    padding-bottom: 5px;
+    padding-bottom: -5px;
     display: flex;
     flex-direction:column;
     align-items: center;
+    border-right: #91918d 1px solid;
     justify-content: space-between;
 }
 .buttonGroup
@@ -259,19 +265,10 @@ h1.headLine
     color: #e4e4e3;
     border: none;
 }
-/* .buttonGroup input:active
-{
-    background-color: red;
-} */
-.buttonGroup input:hover
+/* .buttonGroup input:hover
 {
     background-color: blue;
-}
-.monthlyQuarterly
-{
-    /* border-right: 1px solid black; */
-    width: 42%;
-}
+} */
 .ratio
 {
     display: flex;
@@ -299,35 +296,34 @@ h1.headLine
 .fundsTable 
 {
     font-size: .75rem;
-    line-height: .8rem;
+    line-height: 1rem;
     font-family: 'Palanquin', sans-serif;
     font-weight: bold;
-    color: 363d43;
+    color: #363d43;
 }
 .dateHeader ,.navi 
 {
     border-left: #5b676f 1px solid;
     border-right:#5b676f 1px solid;
 }
-.monthlyQuarterly ,.sinceInception 
+.sinceInception 
 {
     border-right: #91918d 1px solid;
 }
-.sortable , .sortable label 
+.sortable
 {
     cursor: pointer;
-    text-decoration: underline;
+    color: brown;
 }
-.sortable:hover ,.sortable label:hover 
+.sortable:hover 
 {
-    color: darkred;
-    font-size: 1.1em;
+    color: mediumseagreen;
 }
 .cell a 
 {
     color: #00919c !important;
     text-decoration: none;
-    font-family: "Avenir LT Black";
+    /* font-family: "Avenir LT Black"; */
     font-size: .8rem;
     font-weight: bold;
 }
@@ -344,13 +340,17 @@ h1.headLine
 {
     position: fixed;
     top: 0;
-    width: -webkit-fill-available;
+    width: 1333px;
     transition: all 0.3s ease ;
 }
 .hideFilter , .refresh 
 {
     cursor: pointer;
     color: white;
+}
+.hideFilter
+{
+    padding-left: 15px;
 }
 .searchTable 
 {
@@ -370,12 +370,6 @@ h1.headLine
 {
     background-color: yellowgreen;
 }
-.templateActive
-{
-    background-color: green;
-    color: black;
-}
-
 .data-container .dataRowContainer .cell:hover:not(:first-child) 
 {
     background: #d8d6d2;
@@ -404,6 +398,7 @@ h1.headLine
 .headerContainer
 {
     z-index: 10;
+    -webkit-backface-visibility: hidden;
 }
 button[data-activebutton="buttonActive"]
 {
@@ -414,4 +409,25 @@ button[data-activebutton="buttonInactive"]
 {
     background-color:rgb(91, 103, 111);
     color:white;
+}
+
+.downArrow {
+    width: 0;
+    height: 0;
+    border-top: 20px solid #333;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;    
+}
+.stickyHeight {
+    height: 116px;
+    display: none;
+}
+/* .templateActive
+{
+    background-color: green;
+    color: black;
+} */
+input[data-templatestate="active"]
+{
+    background-color: #2B2B2B;
 }

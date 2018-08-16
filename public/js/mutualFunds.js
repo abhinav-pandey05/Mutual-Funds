@@ -1,8 +1,5 @@
-var showBenchmarkData = false; //showBenchmarkData flag to check if the benchmark data is hidden or not. false means hidden
- var i =0 ;        
- counter =1 ;   
- var arr = [];
- var showButtons = true;
+var arr = [];
+var showButtons = true;
 $.mutualFundOperations = (function () {
     return {   
         init: function() {
@@ -24,22 +21,16 @@ $.mutualFundOperations = (function () {
                         $(this).attr('src','assets/searchIcon.jpg');
                     }
                 })
-                // $('.refresh').on('click',function(){
-                //     arr.length = 0;
-                //     $.mutualFundOperations.filterData(arr);
-                //     console.log("arr is ::", arr);
-                //     $('.buttonsContainer').children().css({"background-color":" rgb(91, 103, 111)","color":"white"});
-                    
-                // })
-                    var sticky = $('.headerContainer').offset().top;
-                    window.onscroll = function() {
-                        if (window.pageYOffset >= sticky) {
+                var sticky = $('.headerContainer').offset().top;
+                    window.onscroll = function() { // module to make table header sticky
+                        if (window.pageYOffset > sticky) {
                             $('.headerContainer').addClass('stickyClass');
-                        } else {
+                        } 
+                        else {
                             $('.headerContainer').removeClass('stickyClass');
                         }
                     };
-                $('.hideFilter').on('click',function(){
+                $('.hideFilter').on('click',function(){ //module to hide and show the filters section
                     if(showButtons==true) {
                         $('.filter').hide();
                         $('.hideFilter').children().html("SHOW FILTERS");
@@ -51,80 +42,74 @@ $.mutualFundOperations = (function () {
                         showButtons = true;
                     }
                 })
-                var htmlData = Handlebars.templates["preHeadingTemplate"](rowData.data);
-                $("#preHeadingTemplate").append(htmlData);
-                $.mutualFundOperations.loadTimeData(rowData, "tableDataRows");     
-                $('.monthly').on('click', function() {
-                    $("#dataRowTemplate").html("");  
-                    $('.monthly').addClass('templateActive');  
-                    $('.yearly').removeClass('templateActive');  
-                    $.mutualFundOperations.loadTimeData(rowData, "tableDataRows");
-                    $(".tabDescription").children("span").html(rowData.data.AsOfDateMonthly);                  
-                });
-                $('.quarterly').on('click', function() {
-                    $("#dataRowTemplate").html(""); 
-                    $('.yearly').addClass('templateActive');  
-                    $('.monthly').removeClass('templateActive');    
-                    $.mutualFundOperations.loadTimeData(rowData, "quarterlyData"); 
-                    $(".tabDescription").children("span").html(rowData.data.AsOfDateQuarterly);
-                });
+                var headerHtml = Handlebars.templates["preHeadingTemplate"](rowData.data);//module to load table header via handlebar file
+                $("#preHeadingTemplate").append(headerHtml);
+                $.mutualFundOperations.loadTimeData(rowData, "tableDataRows");
                 
-                $('.benchmarkButton').on('click', function() {   
-                    // $.mutualFundOperations.showFunBenchmarkData(); 
+                //switching between monthly and Quarterly data via 2 different handlebar files
+                function switchPeriodData(period) {
+                    switch(period) {
+                        case '.monthly': 
+                            var altPeriod = ".quarterly"; 
+                            var loadTimeData = "tableDataRows";
+                            var tabDescValue = "AsOfDateMonthly";
+                            break;
+                        case '.quarterly':
+                            var altPeriod = ".monthly";                         
+                            var loadTimeData = "quarterlyData";
+                            var tabDescValue = "AsOfDateQuarterly";
+                            break;
+                        default:
+                            var altPeriod = ".quarterly"; 
+                            var loadTimeData = "tableDataRows";
+                            var tabDescValue = "AsOfDateMonthly";
+                    }
+                    $("#dataRowTemplate").html("");  
+                    $(period).attr("data-templatestate","active");
+                    $(altPeriod).attr("data-templatestate","inactive");
+                    $.mutualFundOperations.loadTimeData(rowData, loadTimeData);
+                    $(".tabDescription").children("span").html(rowData.data[tabDescValue]);
+                }
+                $('.monthly').on('click', function() {
+                    switchPeriodData('.monthly');
                 });
-
-                $('.sortable').on('click',function() {
+                $('.quarterly').on('click',function() {
+                    switchPeriodData('.quarterly');
+                });
+                $('.sortable').on('click',function() { //event that takes place when user clicks on table headers for sorting
                     var column = $(this).attr("data-column-number");                  
                     $.mutualFundOperations.sortingData(this,column);
                 })
                 $.mutualFundOperations.searchData();
-                $('.buttonsContainer').children().on('click',function() {
+
+                $('.buttonsContainer').children().on('click',function() { //psuhing and popping respective classes of filter buttons clicked into an array
                     var filterButton = $(this).attr('class'); 
                     if(jQuery.inArray( filterButton, arr)===-1){
                         arr.push(filterButton); 
                         $(this).attr("data-activeButton","buttonActive");
                     }
-                    else{
-                    var itemtoRemove = filterButton;
-                    arr.splice($.inArray(itemtoRemove, arr),1);
+                    else {
+                    arr.splice($.inArray(filterButton, arr),1);
                     $(this).attr("data-activeButton","buttonInactive");
                     }                          
-                    $.mutualFundOperations.filterData(arr);
+                    $.mutualFundOperations.filterData(arr); // function call for filtering the data
                 })
             });
         },
-        loadTimeData: function(rowData, x) {
+        loadTimeData: function(rowData, x) { //loading handlebar templates
             var html = Handlebars.templates[x](rowData.data);
             $("#dataRowTemplate").append(html);
-            showBenchmarkData = false;
-            // if (showBenchmarkData){
-            //     $(".benchmarkData").show();
-            // } else {
-            //     $(".benchmarkData").hide();
-            // }
-            $.mutualFundOperations.showFunBenchmarkData();
         },
-        showFunBenchmarkData: function() {
-            if (showBenchmarkData === true) {
-            $(".benchmarkData").show();
-            $('.benchmarkButton').attr("value","Hide Benchmark");
-            showBenchmarkData = false;
-            } else {
-                $(".benchmarkData").hide();
-                showBenchmarkData = true;
-            }
-        },
-        sortingData: function(columnName,column) {
-            var findSortKey = function($cell) {
+        sortingData: function(columnName,column) { // function to sort data
+            var findSortKey = function($cell) { // function to find key on basis of which sorting will take place
                 return $cell.text().toUpperCase();
             };
-            var sortDirection = $(columnName).hasClass('.sorted-asc') ? -1 : 1;
+            var sortDirection = $(columnName).hasClass('.sortedAsc') ? -1 : 1;
             var $rows = $(columnName).parent().parent().parent().parent().find(' .dataRowContainer').get();
-            
             $.each($rows, function(index, row) {
             row.sortKey = findSortKey($(row).find('.cell').eq(column));
+            console.log(row.sortKey);
             });
-
             $rows.sort(function(a, b) {
                 if (a.sortKey < b.sortKey) 
                     return -sortDirection;
@@ -132,13 +117,12 @@ $.mutualFundOperations = (function () {
                     return sortDirection;
                 return 0;
             });
-
             $('.data-container').empty();
             $.each($rows, function(index, row) {
                 $('.data-container').append(row);
                     row.sortKey = null;
             });
-            $(columnName).toggleClass('.sorted-asc');
+            $(columnName).toggleClass('.sortedAsc');
         },
         searchData: function() {
             $('#searchBox').keyup(function(event) {
@@ -161,9 +145,8 @@ $.mutualFundOperations = (function () {
                 }
                 $('.dataRowContainer').addClass('visible');
                 console.log("this is :", $(this).val());
-                if (event.keyCode == 27 || $(this).val() == '') {
+                if (event.keyCode == 27 || $(this).val() == '') { // if user presses esc key or removes all characters from search box , clear the drop-down area
                     $(this).val('');
-                    // console.log("event is :", this);
                     $('.dropDownContainer').empty();
                     $('.imgSearchBox').attr('src','assets/searchIcon.jpg'); 
                     $('.dataRowContainer').removeClass('visible').show().addClass('visible');
@@ -173,13 +156,16 @@ $.mutualFundOperations = (function () {
                 }
             })
         },
-        filterData: function(filterArray) { 
+        filterData: function(filterArray) { //filterArray is array of classes of filter buttons clicked
             function checkFilterPass(filterArray, rowAttr) {
                 return rowAttr.some(function(v) {
                     return filterArray.includes(v);
                 });
             }          
-            $('.dataRowContainer').each(function() {
+            /* As per our json data, the classes for a particular filter button is like "Fixed Income". 
+            To compare the data class with classes in array, the white space should be replaced with "," .
+            The array earlier looked like {"Fixed Income"} .Now it looks like {"Fixed", "Income"}. */ 
+            $('.dataRowContainer').each(function() { 
                 var rowAttr = $(this).attr('class').split(" ");
                 var newFilterArray = filterArray.join(" ").split(" ");                
                 if (checkFilterPass(newFilterArray, rowAttr)) {

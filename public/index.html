@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mutual Funds Stuff</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.0/handlebars.js"></script>
-  <script src="precompiledHandlebars/tableDataRows.js"></script>
-  <script src="precompiledHandlebars/quarterlyData.js"></script>
-  <script src="precompiledHandlebars/preHeadingTemplate.js"></script>
+
+  <!--build:css css/styles.min.css-->
   <link rel="stylesheet" href="css/styles.css" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> 
+  <!--endbuild-->  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./js/handlebars.min.js"></script>
+  <script src="./precompiledHandlebars/tableDataRows.js"></script>
+  <script src="./precompiledHandlebars/quarterlyData.js"></script>
+  <script src="./precompiledHandlebars/preHeadingTemplate.js"></script>
 </head>
 <body>
   <div>
@@ -24,14 +26,14 @@
     </section>  
     <section class="actionContainer">
       <div class="  searchBar">
-        <div class="col-xs-4 refresh" >
+        <!-- <div class="col-xs-4 refresh" >
           <span>Clear All</span>
           <img src="assets/refresh.png" alt="refresh icon">
-        </div>
-        <div class="col-xs-4 hideFilter" >
+        </div> -->
+        <div class="hideFilter" >
           <span>HIDE FILTERS</span>
         </div>
-        <div class="col-xs-4 searchTable" >
+        <div class="searchTable" >
           <label class="searchBoxLabel" for ="searchBox">
             <input type="text" id="searchBox" class="searchInput" value="" placeholder="Search" autocomplete="off">
               <img src="assets/searchIcon.jpg" class="imgSearchBox" />
@@ -40,7 +42,7 @@
           </div>
         </div>
       </div>
-      <div class=" filter">
+      <div class="filter">
         <div class="col-lg-4 assetClassFilters">
           <h4 class="filterHeader">Asset Class Filters</h4>
           <div class=" buttonsContainer">
@@ -54,14 +56,18 @@
         </div>
       </div>
       <div class="headerContainer" >
-        <script id = "preHeadingTemplate" type="text/x-handlebars-template">
+     
+        <script id="preHeadingTemplate" type="text/x-handlebars-template">
         </script>
-        <div class=" fundsTable">
-          <div class="cell portfolioName sort-key sorted-asc sortable" data-column-number = "0" >PORTFOLIO NAME
+        <div class="fundsTable">
+          <div class="cell portfolioName sortedAsc sortable" data-column-number="0">
+            PORTFOLIO NAME
           </div>
-          <div class="cell ticker sort-key sorted-asc sortable" data-column-number = "1">TICKER</div>
-          <div class="cell inceptionDate sort-key sorted-asc sortable" data-column-number = "2">
-            <label>INCEPTION</label><br>
+          <div class="cell ticker sortedAsc sortable" data-column-number="1">
+            TICKER
+          </div>
+          <div class="cell inceptionDate sortedAsc sortable" data-column-number="2">
+            <label>INCEPTION</label><br />
             <label>DATE</label>
           </div>
           <div class="cell navi">NAV</div>
@@ -71,7 +77,7 @@
           <div class="cell fiveYear">5 YEAR</div>
           <div class="cell tenYear">10 YEAR</div>
           <div class="cell sinceInception">
-            <label>SINCE</label><br>
+            <label>SINCE</label><br />
             <label>INCEPTION</label>
           </div>
           <div class="cell gross">GROSS</div>
@@ -92,6 +98,8 @@
     </p>
   </div>
 </body>
-<script src="js/mutualFunds.js"></script>
-<link rel="stylesheet" href="css/styles.css" type="text/css">
+
+<!--build:js js/mutualFunds.min.js -->
+<script src="./js/mutualFunds.js"></script>
+<!-- endbuild -->
 </html>
