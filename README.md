@@ -25,6 +25,6 @@ Have a look at various mutual funds portfolios that this application has to offe
 3. Install project dependencies 
   > npm i 
 4. Switch to the public folder :
-  > cd public
+  > cd src
 5. Hit following command on the command prompt : 
   > npm start
