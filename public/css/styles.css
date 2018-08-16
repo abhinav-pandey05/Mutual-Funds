@@ -376,7 +376,8 @@ h1.headLine
     overflow: hidden;
 
 }
-.data-container .cell:hover:not(:first-child)::after
+.data-container .cell:hover:not(:first-child)::after,
+.dataRowContainer .cell:hover:not(:first-child)::after
 {
 
     content: "";
