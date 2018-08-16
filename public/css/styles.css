@@ -2,6 +2,10 @@
 {
     box-sizing: border-box;
 }
+body
+{
+    margin: 0;
+}
 #preHeadingTemplate ,#dataRowTemplate
 {
     display: block;
@@ -31,7 +35,8 @@ h1.headLine
 {
     padding-left: 25px;
 }
-.buttonsContainer button:active ,.buttonsContainer1 button:active
+.buttonsContainer button:active ,
+.buttonsContainer button:hover
 {
     background-color: yellow;
     color: black;
@@ -134,6 +139,7 @@ h1.headLine
 }
 .buttonsContainer button
 {
+    cursor: pointer;
     height: 52px;
     color: #e4e4e3;
     background-color: rgb(91, 103, 111);
@@ -144,11 +150,9 @@ h1.headLine
     margin-top: 8px;
 }
 .buttonsContainer button:hover{
-    background-color: #e4e4e3;
-    color: #363d43;
-    border: 1px solid transparent;
-    font-family: "Avenir LT Black";
-    font-weight: bold;
+    background-color: #yellow;;
+    color: black;
+    border: 1px solid #7d7d7a;
 }
 .buttonsContainer1 button
 {
@@ -265,10 +269,6 @@ h1.headLine
     color: #e4e4e3;
     border: none;
 }
-/* .buttonGroup input:hover
-{
-    background-color: blue;
-} */
 .ratio
 {
     display: flex;
@@ -323,13 +323,8 @@ h1.headLine
 {
     color: #00919c !important;
     text-decoration: none;
-    /* font-family: "Avenir LT Black"; */
     font-size: .8rem;
     font-weight: bold;
-}
-.filterActive 
-{
-    background-color: yellowgreen;
 }
 .actionContainer 
 {
@@ -340,6 +335,7 @@ h1.headLine
 {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     transition: all 0.3s ease;
     margin-right:  15px;
@@ -366,10 +362,6 @@ h1.headLine
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     display: block;
-}
-.filterActive
-{
-    background-color: yellowgreen;
 }
 .data-container .dataRowContainer .cell:hover:not(:first-child) 
 {
