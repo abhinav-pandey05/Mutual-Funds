@@ -207,8 +207,11 @@ h1.headLine
 {
     font-size: 1.13rem;
     line-height: 2rem;
-    width: 60%;
+    width: 100%;
     padding-left:25px;
+    padding-right: 40px;
+    text-align: justify;
+    text-justify: inter-word;
 } 
 .description
 {
@@ -340,14 +343,15 @@ h1.headLine
     transition: all 0.3s ease;
     margin-right:  15px;
 }
-.hideFilter , .refresh 
+.hideFilter
 {
     cursor: pointer;
     color: white;
-}
-.hideFilter
-{
+    font-family: 'Palanquin', sans-serif;
+    font-size: 0.9em;
     padding-left: 15px;
+    padding-top: 5px;
+
 }
 .searchTable 
 {
